@@ -1,0 +1,2 @@
+# Compressed kernel modules
+CONFIG_FEATURE_SEAMLESS_XZ=y
