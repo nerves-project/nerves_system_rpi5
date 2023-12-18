@@ -12,5 +12,8 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
-## v1.24.1
+## v0.0.1
 
+This is an initial release to make it easier for more people to test Nerves on
+the Raspberry Pi 5. Future releases may be incompatible and this one might have
+some frustrating bugs.
