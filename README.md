@@ -19,7 +19,7 @@ This is the base Nerves System configuration for the Raspberry Pi 5 Model B.
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
 | ADC                  | No                               |
 | PWM                  | Yes, but no Elixir support       |
-| UART                 | 1 available - `ttyS0`            |
+| UART                 | 2 available - `ttyAMA10`, `ttyAMA0` |
 | Display              | HDMI or 7" RPi Touchscreen       |
 | Camera               | Official RPi Cameras (libcamera) |
 | Ethernet             | Yes                              |

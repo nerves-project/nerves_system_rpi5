@@ -63,6 +63,6 @@ dtoverlay=dwc2
 # information across reboots in DRAM
 dtoverlay=ramoops
 
-# Enable the UART (/dev/ttyS0)
+# Enable the UART (/dev/ttyAMA0)
 enable_uart=1
 
