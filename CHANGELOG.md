@@ -12,6 +12,26 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.2.0
+
+This is a major Buildroot update.
+
+Please see the [nerves_system_br v1.27.0 release notes](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.26.0)
+for upgrade instructions if you've forked this system.
+
+* Changes
+  * Important documentation update to replace ttyS0 with ttyAMA10 for getting
+    the IEx prompt on the debug UART
+  * The `libcamera` and `rpicam_apps` packages have been replaced with the
+    Raspberry Pi-forked versions for better compatibility. Please see
+    `nerves_system_br` release notes.
+
+* Updated dependencies
+  * Linux 6.1.73 (Raspberry Pi 20240124 release)
+  * [nerves_system_br v1.27.0](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.27.0)
+  * [Buildroot 2024.02](https://lore.kernel.org/buildroot/87msrczp4z.fsf@48ers.dk/)
+  * [Erlang/OTP 26.2.3](https://erlang.org/download/OTP-26.2.3.README)
+
 ## v0.1.0
 
 This is a major Buildroot update.
