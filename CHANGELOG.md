@@ -12,6 +12,11 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.2.1
+
+This reduces CI build time to avoid timing out when making releases. It has no
+changes from v0.2.0.
+
 ## v0.2.0
 
 This is a major Buildroot update.
