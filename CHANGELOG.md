@@ -31,7 +31,6 @@ for upgrade instructions if you've forked this system.
     hostname the same.
 
 * Updated dependencies
-  * Linux 6.6.31 (Raspberry Pi stable_20240529 release)
   * [nerves_system_br v1.28.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.28.1)
   * [Buildroot 2024.05](https://lore.kernel.org/buildroot/87bk46tjk2.fsf@dell.be.48ers.dk/T/)
   * [Erlang/OTP 27.0](https://erlang.org/download/OTP-27.0.README)
