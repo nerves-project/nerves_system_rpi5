@@ -76,6 +76,16 @@ cmd("amixer cset numid=3 2")
 
 Change the last argument to `amixer` to `1` to output to the stereo output jack.
 
+## RP1 PIO
+
+The `rpi1-pio` device driver allows use of the PIO hardware using
+[`piolib`](https://github.com/raspberrypi/utils/tree/master/piolib). If you
+don't see `/dev/pio0`, the most likely cause is that you need to update your
+Raspberry Pi's boot EEPROM. See
+[rpi-eeprom](https://github.com/raspberrypi/rpi-eeprom) for binaries. It may be
+easier to upgrade the EEPROM via RaspberryPi OS if the instructions aren't
+clear.
+
 ## Provisioning devices
 
 This system supports storing provisioning information in a small key-value store
