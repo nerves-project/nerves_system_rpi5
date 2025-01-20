@@ -12,6 +12,23 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.4.1
+
+This is a security/bug fix update.
+
+* Changes
+  * Support the CM5 and any other devices that use the BCM2712D0
+  * Support the use of NVME SSDs
+  * Enable the RP1 PIO driver. This likely also requires the bootloader to be
+    updated to use
+
+* Updated dependencies
+  * [nerves_system_br v1.29.3](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.29.3)
+  * [Buildroot 2024.08.3](https://lore.kernel.org/buildroot/874j3e17ek.fsf@dell.be.48ers.dk/T/)
+  * [Erlang/OTP 27.2](https://erlang.org/download/OTP-27.2.README)
+  * Linux 6.6.64 with the Raspberry Pi and PREEMPT_RT patches
+  * [fwup v1.12.0](https://github.com/fwup-home/fwup/releases/tag/v1.12.0)
+
 ## v0.4.0
 
 This is a major Erlang and Buildroot update.
