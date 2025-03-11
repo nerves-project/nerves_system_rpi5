@@ -1,13 +1,14 @@
 # Raspberry Pi 5 Model B (64-bit)
 
-[![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_rpi5.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_rpi5)
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_rpi5.svg "Hex version")](https://hex.pm/packages/nerves_system_rpi5)
+[![CI](https://github.com/nerves-project/nerves_system_rpi5/actions/workflows/ci.yml/badge.svg)](https://github.com/nerves-project/nerves_system_rpi5/actions/workflows/ci.yml)
+[![REUSE status](https://api.reuse.software/badge/github.com/nerves-project/nerves_system_rpi5)](https://api.reuse.software/info/github.com/nerves-project/nerves_system_rpi5)
 
 This is the base Nerves System configuration for the Raspberry Pi 5 Model B.
 
 ![Raspberry Pi 5 image](assets/images/RaspberryPi_5B.svg)
 <br><sup>[Efa / Wikimedia Commons / CC BY-SA
-4.0](https://en.wikipedia.org/wiki/Raspberry_Pi#/media/File:RaspberryPi_5B.svg)</sup>
+4.0](https://en.wikipedia.org/wiki/Raspberry_Pi#/media/File:RaspberryPi_5B_28-08-2024.svg)</sup>
 
 | Feature              | Description                      |
 | -------------------- | -------------------------------- |
