@@ -4,10 +4,8 @@
 #
 ################################################################################i
 
-HAILORT_VERSION = v4.20.0-build-nerves
-HAILORT_SITE = https://github.com/cocoa-xu/hailort.git
-HAILORT_SITE_METHOD = git
-HAILORT_GIT_SUBMODULES = YES
+HAILORT_VERSION = 4.20.0
+HAILORT_SITE = $(call github,hailo-ai,hailort,v$(HAILORT_VERSION))
 HAILORT_LICENSE = MIT
 HAILORT_LICENSE_FILES = hailort/LICENSE
 HAILORT_SUPPORTS_IN_SOURCE_BUILD = NO

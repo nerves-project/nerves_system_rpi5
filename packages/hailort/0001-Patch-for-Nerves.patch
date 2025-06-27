@@ -1,0 +1,120 @@
+From af5781e36c778ed9d9a535d8decff300f080384c Mon Sep 17 00:00:00 2001
+From: Cocoa <i@uwucocoa.moe>
+Date: Fri, 3 Jan 2025 13:35:38 +0100
+Subject: [PATCH] Patch for Nerves
+
+Signed-off-by: Cocoa <i@uwucocoa.moe>
+---
+ hailort/common/CMakeLists.txt            |  5 +++--
+ hailort/libhailort/CMakeLists.txt        | 28 ++++++++++++------------
+ hailort/libhailort/src/CMakeLists.txt    |  9 ++++++++
+ hailort/prepare_externals/CMakeLists.txt |  1 -
+ 4 files changed, 26 insertions(+), 17 deletions(-)
+
+diff --git a/hailort/common/CMakeLists.txt b/hailort/common/CMakeLists.txt
+index ca7d2be..d341f92 100644
+--- a/hailort/common/CMakeLists.txt
++++ b/hailort/common/CMakeLists.txt
+@@ -1,11 +1,12 @@
+ cmake_minimum_required(VERSION 3.5.0)
+ 
+-include(${HAILO_EXTERNALS_CMAKE_SCRIPTS}/spdlog.cmake)
+ include(${HAILO_EXTERNALS_CMAKE_SCRIPTS}/readerwriterqueue.cmake)
+ include(${HAILO_EXTERNALS_CMAKE_SCRIPTS}/xxhash.cmake)
+ include(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/common_compiler_options.cmake)
+ 
+-
++get_filename_component(NERVES_TOOLCHAIN_DIR "${CMAKE_TOOLCHAIN_FILE}" DIRECTORY)
++set(spdlog_DIR "${NERVES_TOOLCHAIN_DIR}/../../../target/${CMAKE_INSTALL_PREFIX}/lib/cmake/spdlog/")
++find_package(spdlog REQUIRED)
+ set(HAILORT_COMMON_CPP_SOURCES
+     ${CMAKE_CURRENT_SOURCE_DIR}/utils.cpp
+     ${CMAKE_CURRENT_SOURCE_DIR}/barrier.cpp
+diff --git a/hailort/libhailort/CMakeLists.txt b/hailort/libhailort/CMakeLists.txt
+index f9d585f..f1719d3 100644
+--- a/hailort/libhailort/CMakeLists.txt
++++ b/hailort/libhailort/CMakeLists.txt
+@@ -20,12 +20,12 @@ if(CMAKE_HOST_WIN32)
+     # https://github.com/protocolbuffers/protobuf/tree/master/cmake#notes-on-compiler-warnings
+     target_compile_options(hef_proto PRIVATE /wd4244)
+ endif()
+-get_filename_component(PROTO_HEADER_DIRECTORY ${PROTO_HEF_HEADER} DIRECTORY)
+-target_include_directories(hef_proto
+-    PUBLIC
+-    $<BUILD_INTERFACE: ${PROTO_HEADER_DIRECTORY}>
+-    $<BUILD_INTERFACE: ${Protobuf_INCLUDE_DIRS}>
+-)
++# get_filename_component(PROTO_HEADER_DIRECTORY ${PROTO_HEF_HEADER} DIRECTORY)
++# target_include_directories(hef_proto
++#     PUBLIC
++#     $<BUILD_INTERFACE: ${PROTO_HEADER_DIRECTORY}>
++#     $<BUILD_INTERFACE: ${Protobuf_INCLUDE_DIRS}>
++# )
+ 
+ protobuf_generate_cpp(PROTO_SCHEDULER_MON_SRC PROTO_SCHEDULER_MON_HEADR scheduler_mon.proto)
+ add_library(scheduler_mon_proto ${PROTO_SCHEDULER_MON_SRC} ${PROTO_SCHEDULER_MON_HEADR})
+@@ -34,12 +34,12 @@ set_target_properties(scheduler_mon_proto PROPERTIES CXX_STANDARD 14 GENERATED T
+ if(CMAKE_HOST_WIN32)
+     target_compile_options(scheduler_mon_proto PRIVATE /wd4244)
+ endif()
+-get_filename_component(PROTO_SCHEDULER_MON_HEADER_DIRECTORY ${PROTO_SCHEDULER_MON_HEADR} DIRECTORY)
+-target_include_directories(scheduler_mon_proto
+-    PUBLIC
+-    $<BUILD_INTERFACE: ${PROTO_SCHEDULER_MON_HEADER_DIRECTORY}>
+-    $<BUILD_INTERFACE: ${Protobuf_INCLUDE_DIRS}>
+-)
++# get_filename_component(PROTO_SCHEDULER_MON_HEADER_DIRECTORY ${PROTO_SCHEDULER_MON_HEADR} DIRECTORY)
++# target_include_directories(scheduler_mon_proto
++#     PUBLIC
++#     $<BUILD_INTERFACE: ${PROTO_SCHEDULER_MON_HEADER_DIRECTORY}>
++#     $<BUILD_INTERFACE: ${Protobuf_INCLUDE_DIRS}>
++# )
+ 
+ protobuf_generate_cpp(PROTO_PROFILER_SRC PROTO_PROFILER_HEADR tracer_profiler.proto)
+ add_library(profiler_proto ${PROTO_PROFILER_SRC} ${PROTO_PROFILER_HEADR})
+@@ -51,8 +51,8 @@ endif()
+ get_filename_component(PROTO_PROFILER_HEADER_DIRECTORY ${PROTO_PROFILER_HEADR} DIRECTORY)
+ target_include_directories(profiler_proto
+     PUBLIC
+-    $<BUILD_INTERFACE: ${PROTO_PROFILER_HEADER_DIRECTORY}>
+-    $<BUILD_INTERFACE: ${Protobuf_INCLUDE_DIRS}>
++    $<BUILD_INTERFACE:${PROTO_PROFILER_HEADER_DIRECTORY}>
++    # $<BUILD_INTERFACE: ${Protobuf_INCLUDE_DIRS}>
+ )
+ 
+ add_subdirectory(src)
+diff --git a/hailort/libhailort/src/CMakeLists.txt b/hailort/libhailort/src/CMakeLists.txt
+index 15b8c03..3dde196 100644
+--- a/hailort/libhailort/src/CMakeLists.txt
++++ b/hailort/libhailort/src/CMakeLists.txt
+@@ -210,6 +210,15 @@ install(FILES
+     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/HailoRT
+     COMPONENT libhailort
+ )
++install(TARGETS hef_proto
++        EXPORT HailoRTTargets
++        DESTINATION ${CMAKE_INSTALL_LIBDIR})
++install(TARGETS profiler_proto
++        EXPORT HailoRTTargets
++        DESTINATION ${CMAKE_INSTALL_LIBDIR})
++install(TARGETS scheduler_mon_proto
++        EXPORT HailoRTTargets
++        DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ install(EXPORT HailoRTTargets
+     FILE HailoRTTargets.cmake
+     NAMESPACE HailoRT::
+diff --git a/hailort/prepare_externals/CMakeLists.txt b/hailort/prepare_externals/CMakeLists.txt
+index a4c8716..29d97f9 100644
+--- a/hailort/prepare_externals/CMakeLists.txt
++++ b/hailort/prepare_externals/CMakeLists.txt
+@@ -6,7 +6,6 @@ set(HAILO_EXTERNALS_EXCLUDE_TARGETS ON)
+ message("Downloading dependencies to ${HAILO_EXTERNAL_DIR} ...")
+ include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/pybind11.cmake)
+ include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/catch2.cmake)
+-include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/spdlog.cmake)
+ include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/json.cmake)
+ include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/dotwriter.cmake)
+ include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/benchmark.cmake)
+-- 
+2.43.0
+
