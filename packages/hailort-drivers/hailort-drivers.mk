@@ -4,10 +4,8 @@
 #
 ################################################################################
 
-HAILORT_DRIVERS_VERSION = v4.20.0
-HAILORT_DRIVERS_SITE = https://github.com/hailo-ai/hailort-drivers.git
-HAILORT_DRIVERS_SITE_METHOD = git
-HAILORT_DRIVERS_GIT_SUBMODULES = YES
+HAILORT_DRIVERS_VERSION = 4.20.0
+HAILORT_DRIVERS_SITE = $(call github,hailo-ai,hailort-drivers,v$(HAILORT_DRIVERS_VERSION))
 HAILORT_DRIVERS_LICENSE = GPL-2.0
 HAILORT_DRIVERS_LICENSE_FILES = LICENSE
 HAILORT_DRIVERS_DEPENDENCIES = linux hailort
