@@ -2,9 +2,9 @@ config BR2_PACKAGE_HAILORT
 	bool "hailort"
 	depends on BR2_TOOLCHAIN_HAS_THREADS
 	depends on BR2_INSTALL_LIBSTDCPP
+	depends on !BR2_PACKAGE_PROTOBUF # Use Hailort-provided version
+	depends on !BR2_PACKAGE_EIGEN # Use Hailort-provided version
 	select BR2_PACKAGE_SPDLOG_HAILORT
-	select BR2_PACKAGE_PROTOBUF
-	select BR2_PACKAGE_EIGEN
 	help
 	  HailoRT is a runtime library for Hailo AI accelerator devices.
 
