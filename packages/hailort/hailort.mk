@@ -13,6 +13,10 @@ HAILORT_INSTALL_STAGING = YES
 
 HAILORT_DEPENDENCIES = spdlog_hailort
 
+define HAILORT_BUSYBOX_CONFIG_FIXUPS
+        $(call KCONFIG_ENABLE_OPT,CONFIG_HOSTNAME)
+endef
+
 define HAILORT_INSTALL_PROTOBUF_LITE
          $(INSTALL) -D -m 0644 $(@D)/buildroot-build/_deps/protobuf-build/libprotobuf-lite.so.32 \
                 $(TARGET_DIR)/usr/lib/libprotobuf-lite.so.32
