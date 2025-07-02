@@ -1,0 +1,12 @@
+config BR2_PACKAGE_HAILORT_DRIVERS
+	bool "hailort-drivers"
+	depends on BR2_LINUX_KERNEL
+	depends on BR2_PACKAGE_HAILORT
+	select BR2_PACKAGE_HAILORT_FIRMWARE
+	help
+	  HailoRT PCIe drivers for Hailo AI accelerators.
+
+	  https://github.com/hailo-ai/hailort-drivers
+
+comment "hailort-drivers needs a Linux kernel to be built"
+	depends on !BR2_LINUX_KERNEL
