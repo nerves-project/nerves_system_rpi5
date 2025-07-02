@@ -3,6 +3,7 @@
 # If these are non-proprietary, please consider contributing them back to
 # Nerves or Buildroot.
 
+source "$NERVES_DEFCONFIG_DIR/packages/hailort/Config.in"
 source "$NERVES_DEFCONFIG_DIR/packages/hailort-drivers/Config.in"
 source "$NERVES_DEFCONFIG_DIR/packages/hailort-firmware/Config.in"
 source "$NERVES_DEFCONFIG_DIR/packages/spdlog_hailort/Config.in"
