@@ -1,0 +1,6 @@
+config BR2_PACKAGE_HAILORT_FIRMWARE
+	bool "hailort-firmware"
+	help
+	  HailoRT firmware
+
+	  https://github.com/hailo-ai/hailort-drivers/blob/master/download_firmware.sh
