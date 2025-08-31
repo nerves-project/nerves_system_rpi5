@@ -59,6 +59,9 @@ arm_boost=1
 # Support USB gadget mode on the USB-C port
 dtoverlay=dwc2
 
+# Support hevc decoder
+dtoverlay=rpivid-v4l2
+
 # The ramoops overlay works with the pstore driver to preserve crash
 # information across reboots in DRAM
 dtoverlay=ramoops
