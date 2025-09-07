@@ -35,7 +35,7 @@ camera_auto_detect=1
 display_auto_detect=1
 
 # Enable DRM VC4 V3D driver
-dtoverlay=vc4-kms-v3d
+dtoverlay=vc4-kms-v3d-pi5,cma-512
 max_framebuffers=2
 
 # Don't have the firmware create an initial video= setting in cmdline.txt.
@@ -58,9 +58,6 @@ arm_boost=1
 
 # Support USB gadget mode on the USB-C port
 dtoverlay=dwc2
-
-# Support hevc decoder
-dtoverlay=rpivid-v4l2
 
 # The ramoops overlay works with the pstore driver to preserve crash
 # information across reboots in DRAM

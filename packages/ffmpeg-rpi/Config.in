@@ -1,0 +1,6 @@
+config BR2_PACKAGE_FFMPEG_RPI
+    bool "FFmpeg (Raspberry Pi fork)"
+    select BR2_PACKAGE_ZLIB
+    select BR2_PACKAGE_LIBDRM
+    select BR2_PACKAGE_HAS_UDEV # for libudev
+    select BR2_PACKAGE_LIBV4L
