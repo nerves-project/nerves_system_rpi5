@@ -1,4 +1,4 @@
-From af5781e36c778ed9d9a535d8decff300f080384c Mon Sep 17 00:00:00 2001
+From 18fda43de316037f1fc4b83c055f7d9a572517fb Mon Sep 17 00:00:00 2001
 From: Cocoa <i@uwucocoa.moe>
 Date: Fri, 3 Jan 2025 13:35:38 +0100
 Subject: [PATCH] Patch for Nerves
@@ -31,7 +31,7 @@ index ca7d2be..d341f92 100644
      ${CMAKE_CURRENT_SOURCE_DIR}/utils.cpp
      ${CMAKE_CURRENT_SOURCE_DIR}/barrier.cpp
 diff --git a/hailort/libhailort/CMakeLists.txt b/hailort/libhailort/CMakeLists.txt
-index f9d585f..f1719d3 100644
+index b63752e..f58b5df 100644
 --- a/hailort/libhailort/CMakeLists.txt
 +++ b/hailort/libhailort/CMakeLists.txt
 @@ -20,12 +20,12 @@ if(CMAKE_HOST_WIN32)
@@ -84,10 +84,10 @@ index f9d585f..f1719d3 100644
  
  add_subdirectory(src)
 diff --git a/hailort/libhailort/src/CMakeLists.txt b/hailort/libhailort/src/CMakeLists.txt
-index 15b8c03..3dde196 100644
+index 6eee237..49e662e 100644
 --- a/hailort/libhailort/src/CMakeLists.txt
 +++ b/hailort/libhailort/src/CMakeLists.txt
-@@ -210,6 +210,15 @@ install(FILES
+@@ -205,6 +205,15 @@ install(FILES
      DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/HailoRT
      COMPONENT libhailort
  )
@@ -104,7 +104,7 @@ index 15b8c03..3dde196 100644
      FILE HailoRTTargets.cmake
      NAMESPACE HailoRT::
 diff --git a/hailort/prepare_externals/CMakeLists.txt b/hailort/prepare_externals/CMakeLists.txt
-index a4c8716..29d97f9 100644
+index 927b2e1..8e37a3f 100644
 --- a/hailort/prepare_externals/CMakeLists.txt
 +++ b/hailort/prepare_externals/CMakeLists.txt
 @@ -6,7 +6,6 @@ set(HAILO_EXTERNALS_EXCLUDE_TARGETS ON)
@@ -113,8 +113,8 @@ index a4c8716..29d97f9 100644
  include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/catch2.cmake)
 -include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/spdlog.cmake)
  include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/json.cmake)
+ include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/cpp-httplib.cmake)
  include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/dotwriter.cmake)
- include(${CMAKE_CURRENT_LIST_DIR}/../cmake/external/benchmark.cmake)
 -- 
 2.43.0
 
