@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-HAILORT_FIRMWARE_VERSION = 4.20.0
+HAILORT_FIRMWARE_VERSION = 4.22.0
 HAILORT_FIRMWARE_SITE = https://hailo-hailort.s3.eu-west-2.amazonaws.com/Hailo8/$(HAILORT_FIRMWARE_VERSION)/FW
 HAILORT_FIRMWARE_SOURCE = hailo8_fw.$(HAILORT_FIRMWARE_VERSION).bin
 HAILORT_FIRMWARE_LICENSE = Proprietary
