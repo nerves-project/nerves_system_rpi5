@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-HAILORT_VERSION = 4.20.0
+HAILORT_VERSION = 4.22.0
 HAILORT_SITE = $(call github,hailo-ai,hailort,v$(HAILORT_VERSION))
 HAILORT_LICENSE = MIT
 HAILORT_LICENSE_FILES = hailort/LICENSE hailort/LICENSE-3RD-PARTY.md
