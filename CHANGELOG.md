@@ -12,6 +12,11 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.6.4
+
+* Package updates
+  * Hailo RT 4.22.0
+
 ## v0.6.3
 
 This is an important security/bug fix that addresses Erlang CVEs for the ssh
