@@ -44,7 +44,6 @@ SPDX-License-Identifier = "GPL-2.0-or-later"
 # Linux kernel derived or related files
 [[annotations]]
 path = [
- "linux/*",
  "linux-6.12.defconfig",
  "ramoops.dts"
 ]
