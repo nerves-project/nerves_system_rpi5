@@ -43,6 +43,7 @@ file_resources = [
   %{name: "overlays/uart3-pi5.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/uart3-pi5.dtbo"},
   %{name: "overlays/uart4-pi5.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/uart4-pi5.dtbo"},
   %{name: "overlays/vc4-kms-dsi-7inch.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/vc4-kms-dsi-7inch.dtbo"},
+  %{name: "overlays/vc4-kms-dsi-ili9881-5inch.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/vc4-kms-dsi-ili9881-5inch.dtbo"},
   %{name: "overlays/vc4-kms-dsi-ili9881-7inch.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/vc4-kms-dsi-ili9881-7inch.dtbo"},
   %{name: "overlays/vc4-kms-v3d.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/vc4-kms-v3d.dtbo"},
   %{name: "overlays/vc4-kms-v3d-pi5.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/vc4-kms-v3d-pi5.dtbo"},
