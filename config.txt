@@ -56,7 +56,8 @@ arm_boost=1
 #       this won't work.
 #dtoverlay=w1-gpio-pi5,gpiopin=4
 
-# Support USB gadget mode on the USB-C port
+# USB gadget mode only works on a CM5. If using the CM5IO, be sure to short
+# the USB_OTG jumper.
 dtoverlay=dwc2
 
 # The ramoops overlay works with the pstore driver to preserve crash
