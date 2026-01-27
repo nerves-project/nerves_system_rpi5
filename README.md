@@ -6,6 +6,9 @@
 
 This is the base Nerves System configuration for the Raspberry Pi 5 Model B.
 
++*This is the `main` branch. If you are customizing a `v0.x` system, please see
+the `maint-v0.x` branch.*
+
 ![Raspberry Pi 5 image](assets/images/RaspberryPi_5B.svg)
 <br><sup>[Efa / Wikimedia Commons / CC BY-SA
 4.0](https://en.wikipedia.org/wiki/Raspberry_Pi#/media/File:RaspberryPi_5B_28-08-2024.svg)</sup>
