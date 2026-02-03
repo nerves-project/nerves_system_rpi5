@@ -3,7 +3,6 @@ version = 1
 [[annotations]]
 path = [
  ".formatter.exs",
- ".github/CODEOWNERS",
  ".gitignore",
  "CHANGELOG.md",
  "nerves_defconfig",
