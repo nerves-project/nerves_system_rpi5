@@ -7,7 +7,8 @@
 This is the base Nerves System configuration for the Raspberry Pi 5 Model B.
 
 *This is the `main` branch. If you are customizing a `v0.x` system, please see
-the `maint-v0.x` branch.*
+the `maint-v0.x` branch. See the "Upgrading to 2.0" section if you are upgrading
+your Nerves system dependency.*
 
 ![Raspberry Pi 5 image](assets/images/RaspberryPi_5B.svg)
 <br><sup>[Efa / Wikimedia Commons / CC BY-SA
@@ -41,6 +42,32 @@ for more information.
 If you need custom modifications to this system for your device, clone this
 repository and update as described in [Making custom
 systems](https://hexdocs.pm/nerves/customizing-systems.html).
+
+## Upgrading to 2.0
+
+If your application depended on a pre-2.0 version of this Nerves system and you
+are upgrading, you'll need to start validating firmware after it boots the first
+time. If you don't do this, the Nerves MOTD will show that the firmware hasn't
+been validated when you log in. You can manually validate by calling
+`Nerves.Runtime.validate_firmware/0` or running the `fw_validate` helper at the IEx prompt.
+If you don't do this, the device will run the old firmware on the next reboot.
+
+A simple default way of validating the firmware can be enabled using
+Nerves.Runtime's startup guard feature as described in [Assisted firmware
+validation and automatic
+revert](https://hexdocs.pm/nerves_runtime/readme.html#assisted-firmware-validation-and-automatic-revert).
+Please follow the directions there for the needed config file update.
+
+If in doubt, use `mix nerves.new` to create a new project and compare what it
+creates to your project. If you haven't modified the Nerves-specific
+configuration parts of your project much, the firmware validation piece should
+be the main update.
+
+**IMPORTANT:** If you bought your Raspberry Pi 5 a long time ago, it may need a
+bootloader EEPROM firmware update. There was an issue where rebooting after a
+firmware update didn't work that was resolved by a newer bootloader. The
+Raspberry Pi OS is the reliable way of updating the EEPROM, but you may have
+success with [nerves_rpi_eeprom](https://github.com/fhunleth/nerves_rpi_eeprom).
 
 ## Supported WiFi devices
 
