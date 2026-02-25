@@ -10,6 +10,15 @@ This is the base Nerves System configuration for the Raspberry Pi 5 Model B.
 the `maint-v0.x` branch. See the "Upgrading to 2.0" section if you are upgrading
 your Nerves system dependency.*
 
+**IMPORTANT:** If your Raspberry Pi 5 was manufactured a long time ago, please
+upgrade the bootloader EEPROM firmware. This has fixed issues preventing devices
+from booting or rebooting. Raspberry Pi OS has a [reliable way of updating the
+EEPROM](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#bootloader_update_stable).
+You may have success with
+[nerves_rpi_eeprom](https://github.com/fhunleth/nerves_rpi_eeprom) if you're
+running a pre-2.0 firmware and haven't upgraded yet.
+
+
 ![Raspberry Pi 5 image](assets/images/RaspberryPi_5B.svg)
 <br><sup>[Efa / Wikimedia Commons / CC BY-SA
 4.0](https://en.wikipedia.org/wiki/Raspberry_Pi#/media/File:RaspberryPi_5B_28-08-2024.svg)</sup>
@@ -63,11 +72,6 @@ creates to your project. If you haven't modified the Nerves-specific
 configuration parts of your project much, the firmware validation piece should
 be the main update.
 
-**IMPORTANT:** If you bought your Raspberry Pi 5 a long time ago, it may need a
-bootloader EEPROM firmware update. There was an issue where rebooting after a
-firmware update didn't work that was resolved by a newer bootloader. The
-Raspberry Pi OS is the reliable way of updating the EEPROM, but you may have
-success with [nerves_rpi_eeprom](https://github.com/fhunleth/nerves_rpi_eeprom).
 
 ## Supported WiFi devices
 
