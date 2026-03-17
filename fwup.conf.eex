@@ -36,6 +36,7 @@ file_resources = [
   %{name: "overlays/imx296.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/imx296.dtbo"},
   %{name: "overlays/imx477.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/imx477.dtbo"},
   %{name: "overlays/imx708.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/imx708.dtbo"},
+  %{name: "overlays/imx500.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/imx500.dtbo"},
   %{name: "overlays/miniuart-bt.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/miniuart-bt.dtbo"},
   %{name: "overlays/ov5647.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/ov5647.dtbo"},
   %{name: "overlays/overlay_map.dtb", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/overlay_map.dtb"},
