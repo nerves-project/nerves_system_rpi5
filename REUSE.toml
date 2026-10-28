@@ -43,7 +43,7 @@ SPDX-License-Identifier = "GPL-2.0-or-later"
 [[annotations]]
 path = [
  "linux-6.18.defconfig",
- "ramoops-pi4-overlay.dts"
+ "ramoops-pi5-overlay.dts"
 ]
 precedence = "override"
 SPDX-FileCopyrightText = "Various"
