@@ -39,7 +39,7 @@ file_resources = [
   %{name: "overlays/miniuart-bt.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/miniuart-bt.dtbo"},
   %{name: "overlays/ov5647.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/ov5647.dtbo"},
   %{name: "overlays/overlay_map.dtb", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/overlay_map.dtb"},
-  %{name: "overlays/ramoops-pi4.dtbo", path: "${NERVES_SYSTEM}/images/ramoops-pi4-overlay.dtb"},
+  %{name: "overlays/ramoops-pi5.dtbo", path: "${NERVES_SYSTEM}/images/ramoops-pi5-overlay.dtb"},
   %{name: "overlays/rpi-backlight.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/rpi-backlight.dtbo"},
   %{name: "overlays/rpi-ft5406.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/rpi-ft5406.dtbo"},
   %{name: "overlays/tc358743.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/tc358743.dtbo"},
