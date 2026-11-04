@@ -63,7 +63,7 @@ defmodule NervesSystemRpi5.MixProject do
         {"TARGET_GCC_FLAGS",
          "-mabi=lp64 -Wl,-z,max-page-size=4096 -Wl,-z,common-page-size=4096 -fstack-protector-strong -mcpu=cortex-a76 -fPIE -pie -Wl,-z,now -Wl,-z,relro"}
       ],
-      checksum: package_files()
+      checksum: source_finger_print_files()
     ]
   end
 
@@ -104,11 +104,10 @@ defmodule NervesSystemRpi5.MixProject do
     ]
   end
 
-  defp package_files do
+  defp source_finger_print_files do
     [
       "fwup_include",
       "rootfs_overlay",
-      "CHANGELOG.md",
       "busybox.fragment",
       "cmdline-a.txt",
       "cmdline-b.txt",
@@ -117,17 +116,24 @@ defmodule NervesSystemRpi5.MixProject do
       "external.mk",
       "fwup-ops.conf",
       "fwup.conf.eex",
-      "LICENSES/*",
       "linux-6.18.defconfig",
       "mix.exs",
       "nerves_defconfig",
       "post-build.sh",
       "post-createfs.sh",
-      "ramoops-pi5-overlay.dts",
+      "ramoops-pi5-overlay.dts"
+    ]
+  end
+
+  defp package_files do
+    [
+      "CHANGELOG.md",
+      "checksum.exs",
+      "LICENSES/*",
       "README.md",
       "REUSE.toml",
       "VERSION"
-    ]
+    ] ++ source_finger_print_files()
   end
 
   defp build_runner_opts() do
