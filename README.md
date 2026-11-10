@@ -1,3 +1,9 @@
+<!--
+  SPDX-FileCopyrightText: 2023 Frank Hunleth
+  SPDX-FileCopyrightText: 2024 Ryota Kinukawa
+  SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Raspberry Pi 5 Model B (64-bit)
 
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_rpi5.svg "Hex version")](https://hex.pm/packages/nerves_system_rpi5)
